@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import Link from 'next/link';
 import { Project } from '../../types/Project';
 import Icon from './Icons';
+import { Button } from './ui/button';
 type Props = {
   featuredProject: Project[]
 
@@ -46,7 +47,7 @@ export const ProjectCard = ({ name, image, link, tags, github, description }: Pr
 
 const Projects = ({ featuredProject }: Props) => {
   return (
-    <section id='projects-section' className=' relative h-full lg:h-screen lg:mx-auto lg:w-3/4 w-full  px-4  items-center'>
+    <section id='projects-section' className=' relative h-full lg:h-screen lg:mx-auto lg:w-3/4 w-full px-4 items-center'>
 
       <div className='relative lg:absolute lg:left-[50%] lg:top-[50%] lg:-translate-x-[50%] lg:-translate-y-[50%] flex-col lg:flex-row-reverse flex w-full '>
         <div className='w-full lg:w-1/2 '>
@@ -61,14 +62,11 @@ const Projects = ({ featuredProject }: Props) => {
         </div>
       </div>
       <div className='relative lg:absolute flex flex-col lg:flex-row lg:top-5 justify-center lg:justify-start w-full lg:space-x-4 lg:py-2  '>
-
-        <Fragment>
-          {
-            featuredProject.filter((_, index) => index % 2).map((project) => (
-              <ProjectCard key={project._id} name={project.name} image={project.image} tags={project.tags} link={project.link} github={project.github} />
-            ))
-          }
-        </Fragment>
+        {
+          featuredProject.filter((_, index) => index % 2).map((project) => (
+            <ProjectCard key={project._id} name={project.name} image={project.image} tags={project.tags} link={project.link} github={project.github} />
+          ))
+        }
       </div>
 
       <div className='relative lg:absolute flex flex-col lg:flex-row lg:bottom-7 justify-center lg:justify-end w-full lg:space-x-4 lg:py-2  '>
@@ -79,7 +77,9 @@ const Projects = ({ featuredProject }: Props) => {
         }
       </div>
       <div className='w-full flex justify-center items-center lg:absolute lg:bottom-5 '>
-        <Link href={'/projects'} className='font-bold border border-gray-900 rounded-full tracking-tighter h-15 px-4'>More Projects</Link>
+        <Button variant={'outline'} className='font-bold border border-gray-900 rounded-full tracking-tighter h-15 px-4' asChild>
+          <Link href={'/projects'} >More Projects</Link>
+        </Button>
       </div>
 
     </section>
