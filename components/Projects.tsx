@@ -76,7 +76,7 @@ const Projects = ({ featuredProject }: Props) => {
           ))
         }
       </div>
-      <div className='w-full flex justify-center items-center lg:absolute lg:bottom-5 '>
+      <div className='w-full flex justify-center items-center lg:absolute lg:bottom-0 '>
         <Button variant={'outline'} className='font-bold border border-gray-900 rounded-full tracking-tighter h-15 px-4' asChild>
           <Link href={'/projects'} >More Projects</Link>
         </Button>
