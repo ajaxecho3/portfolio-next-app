@@ -3,6 +3,8 @@ import Hero from "@/components/Hero"
 import Header from "@/components/Header"
 import Projects from "@/components/Projects"
 import { getFeaturedProjects, getSocials } from "@/sanity/sanity.utils"
+import { Skeleton } from "@/components/ui/skeleton"
+import About from "@/components/About"
 
 const montserrat = Montserrat({
   subsets: ['latin-ext'],
@@ -14,9 +16,11 @@ export default async function Home() {
 
   return (
     <main className={` h-full ${montserrat.className} bg-[#E4E4DE]`}>
+      <Skeleton />
       <Header socials={socials} />
       <Hero />
       <Projects featuredProject={featuredProjects} />
+      <About />
     </main>
   )
 }

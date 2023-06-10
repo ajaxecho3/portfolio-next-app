@@ -1,6 +1,6 @@
 import { createClient, groq } from "next-sanity";
-import { Social } from "../../types/Social";
-import { Project } from "../../types/Project";
+import { Social } from "../types/Social";
+import { Project } from "../types/Project";
 
 const client = createClient({
   projectId: "l49c6sck",
@@ -71,5 +71,3 @@ export async function getProject(id: string): Promise<Project> {
     { id }
   );
 }
-
-

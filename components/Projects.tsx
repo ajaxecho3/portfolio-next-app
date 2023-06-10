@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { Fragment } from 'react'
 import Link from 'next/link';
-import { Project } from '../../types/Project';
+import { Project } from '../types/Project';
 import Icon from './Icons';
 import { Button } from './ui/button';
 type Props = {
@@ -69,7 +69,7 @@ const Projects = ({ featuredProject }: Props) => {
         }
       </div>
 
-      <div className='relative lg:absolute flex flex-col lg:flex-row lg:bottom-7 justify-center lg:justify-end w-full lg:space-x-4 lg:py-2  '>
+      <div className='relative lg:absolute flex flex-col lg:flex-row lg:bottom-8 justify-center lg:justify-end w-full lg:space-x-4 lg:py-2  '>
         {
           featuredProject.filter((_, index) => !(index % 2)).map((project) => (
             <ProjectCard key={project._id} name={project.name} image={project.image} tags={project.tags} link={project.link} github={project.github} />

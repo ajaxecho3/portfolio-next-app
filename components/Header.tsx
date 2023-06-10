@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { Social } from '../../types/Social'
+import { Social } from '../types/Social'
 import Icon from './Icons'
 
 type Props = {
