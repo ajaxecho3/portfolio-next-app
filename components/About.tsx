@@ -5,10 +5,12 @@ import Icon from './Icons'
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { About } from '@/types/About'
 
+type Props = { about: About }
 
-const AboutPage = async () => {
-  const { description, name, skills, experience, image, github, twitter, linkedin } = await getAbout()
+const AboutPage = ({ about }: Props) => {
+  const { name, description, experience, skills, image, github, linkedin, twitter } = about
   return (
     <section className='mx-auto container pt-20 min-h-screen h-full'>
       <div className='flex flex-col items-center '>
