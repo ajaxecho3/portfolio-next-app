@@ -1,6 +1,7 @@
 import { createClient, groq } from "next-sanity";
 import { Social } from "../types/Social";
 import { Project } from "../types/Project";
+import { About } from "@/types/About";
 
 const client = createClient({
   projectId: "l49c6sck",
@@ -70,4 +71,42 @@ export async function getProject(id: string): Promise<Project> {
   }`,
     { id }
   );
+}
+
+export async function getAbout(): Promise<About> {
+  return client.fetch(groq`*[_type == "about"][0]{  
+    _id,
+    _createdAt,
+    "image": image.asset->url,
+    name,
+    description,
+    github,
+    linkedin,
+    twitter,
+    email,
+    "skills": skills[]->{
+      logo,
+      name,
+      level,
+      _id,
+    },
+    "experience": experience[]->{
+      name,
+      position,
+      current,
+      start,
+      end,
+      description,
+      "image": image.asset->url,
+    },
+    "education": education[]->{
+      name,
+      degree,
+      current,
+      start,
+      end,
+      description,
+      "image": image.asset->url,
+    },
+  }`);
 }

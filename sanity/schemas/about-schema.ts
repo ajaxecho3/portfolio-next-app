@@ -15,7 +15,15 @@ export default defineType({
       name: "description",
       title: "Description",
       description: "Description of the person",
-      type: "text",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+        {
+          type: "image",
+        },
+      ],
     }),
     defineField({
       name: "image",
