@@ -6,9 +6,8 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type Props = {}
 
-const About = async (props: Props) => {
+const AboutPage = async () => {
   const { description, name, skills, experience, image, github, twitter, linkedin } = await getAbout()
   return (
     <section className='mx-auto container pt-20 min-h-screen h-full'>
@@ -114,4 +113,4 @@ const About = async (props: Props) => {
   )
 }
 
-export default About
+export default AboutPage
