@@ -49,7 +49,7 @@ const AboutPage = ({ about }: Props) => {
                   <ol className="border-l border-neutral-300 dark:border-neutral-500 w-full">
                     {
                       experience.map(({ name, _id, position, start, current, end, description, image }) => (
-                        <li key={_id} className='w-full'>
+                        <li key={_id + name} className='w-full'>
                           <div className="flex-start flex items-center pt-3">
                             <div
                               className="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
