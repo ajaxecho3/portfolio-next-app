@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .gradiantText {
-  @apply text-transparent bg-gradient-to-r bg-clip-text from-orange-500 via-purple-500 to-blue-700
+  @apply bg-gradient-to-r from-orange-500 via-purple-500 to-blue-700 bg-clip-text text-transparent;
 }

@@ -1,19 +1,18 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const GlowingBtn = (props: Props) => {
   return (
-    <div className="relative group">
-      <div className="absolute -inset-[0.010rem] bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-      <button className="relative px-7 py-4 bg-gray-700 rounded-lg leading-none flex items-center divide-x divide-gray-600">
+    <div className="group relative">
+      <div className="animate-tilt absolute -inset-[0.010rem] rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 opacity-75 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+      <button className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-gray-700 px-7 py-4 leading-none">
         <span className="flex items-center space-x-5">
-
           <span className=" text-gray-100">Download CV</span>
         </span>
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default GlowingBtn
+export default GlowingBtn;

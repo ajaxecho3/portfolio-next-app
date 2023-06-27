@@ -1,12 +1,9 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const page = (props: Props) => {
-  return (
-    <section className='mx-auto container pt-20 h-screen '>page</section>
-  )
+  return <section className="container mx-auto h-screen pt-20 ">page</section>;
+};
 
-}
-
-export default page
+export default page;

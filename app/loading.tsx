@@ -1,14 +1,14 @@
-import React from 'react'
-import { Skeleton } from '../components/ui/skeleton'
+import React from "react";
+import { Skeleton } from "../components/ui/skeleton";
 
-type Props = {}
+type Props = {};
 
 const Loading = (props: Props) => {
   return (
     <div>
-      <Skeleton className="w-[100px] h-[20px] rounded-full" />
+      <Skeleton className="h-[20px] w-[100px] rounded-full" />
     </div>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

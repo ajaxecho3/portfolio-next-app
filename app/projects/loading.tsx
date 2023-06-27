@@ -1,18 +1,18 @@
-import React from 'react'
-import { Skeleton } from '../../components/ui/skeleton'
+import React from "react";
+import { Skeleton } from "../../components/ui/skeleton";
 
-type Props = {}
+type Props = {};
 
 const Loading = (props: Props) => {
   return (
-    <div className='w-1/2 mx-auto flex items-center space-x-4'>
+    <div className="mx-auto flex w-1/2 items-center space-x-4">
       <Skeleton className="h-12 w-12 rounded-full" />
       <div className="space-y-2">
         <Skeleton className="h-4 w-[250px]" />
         <Skeleton className="h-4 w-[200px]" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;
