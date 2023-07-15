@@ -9,7 +9,7 @@ type Props = {
 
 const Header = ({ socials }: Props) => {
   return (
-    <header className=" body-font text-text z-50">
+    <header className=" body-font text-text sticky top-0 z-50">
       <div className="container mx-auto flex flex-row flex-wrap items-center p-5">
         <Link
           href="/"

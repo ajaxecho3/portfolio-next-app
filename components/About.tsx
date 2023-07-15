@@ -21,8 +21,15 @@ const AboutPage = ({ about }: Props) => {
     twitter,
   } = about;
   return (
-    <section className="h-full min-h-screen max-w-2xl pt-20 md:container md:mx-auto ">
-      <div className="flex flex-col items-center  ">
+    <section className="relative h-full min-h-screen max-w-2xl pt-20 md:container md:mx-auto ">
+      <div
+        className="absolute inset-0 h-screen blur-2xl"
+        style={{
+          background:
+            "linear-gradient(9.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
+        }}
+      ></div>
+      <div className="relative flex flex-col items-center  ">
         <div className=" mx-auto rounded-xl px-5  py-5 md:w-3/4">
           <div className=" flex w-full flex-col justify-between md:flex-row md:space-x-5">
             <div className=" relative md:w-1/3">
