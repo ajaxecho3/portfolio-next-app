@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Project } from "../types/Project";
 import Icon from "./Icons";
 import { Button } from "./ui/button";
+import Image from "next/image";
 type Props = {
   featuredProject: Project[];
 };
@@ -18,7 +19,7 @@ export const ProjectCard = ({
   description,
 }: Project) => {
   return (
-    <div className="w-[450px]">
+    <div className="w-full md:w-[450px]">
       <div className="flex w-full justify-between px-[2px] py-1">
         <h2 className="font-semibold  ">{name} </h2>
         <div className="flex justify-between space-x-2">
@@ -35,10 +36,11 @@ export const ProjectCard = ({
           </Link>
         </div>
       </div>
-      <div className="relative rounded-xl bg-gray-100 shadow-xl">
-        <img
-          className=" h-56 w-full rounded object-fill "
+      <div className="relative h-56 rounded-xl bg-gray-100 shadow-xl">
+        <Image
+          className=" h-56 w-full rounded object-center "
           src={image}
+          fill
           alt="content"
         />
       </div>
