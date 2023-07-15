@@ -55,10 +55,10 @@ function Hero({}: Props) {
           },
           particles: {
             color: {
-              value: "#ffffff",
+              value: "#666666",
             },
             links: {
-              color: "#ffffff",
+              color: "#6e6e6e",
               distance: 150,
               enable: true,
               opacity: 0.5,
