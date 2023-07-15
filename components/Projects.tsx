@@ -22,9 +22,11 @@ export const ProjectCard = ({
       <div className="flex w-full justify-between px-[2px] py-1">
         <h2 className="font-semibold  ">{name} </h2>
         <div className="flex justify-between space-x-2">
-          <Link href={github}>
-            <Icon icon={"devicon:github"} width={20} height={20} />
-          </Link>
+          {github && (
+            <Link href={github}>
+              <Icon icon={"devicon:github"} width={20} height={20} />
+            </Link>
+          )}
           <Link
             className="rounded-xl border border-gray-900  px-1 py-1 text-xs font-semibold"
             href={link}

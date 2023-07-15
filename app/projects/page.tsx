@@ -9,7 +9,7 @@ type Props = {};
 const Projects = async (props: Props) => {
   const projects = await getProjects();
   return (
-    <div className="mx-auto w-1/2">
+    <div className="mx-auto w-full px-3 md:w-1/2">
       <Link href={"/"} replace>
         <Icon
           className=" rounded-full bg-white p-2 shadow-lg"
@@ -47,7 +47,7 @@ const Projects = async (props: Props) => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 ">
+      <div className="grid gap-4 md:mt-10 lg:grid-cols-2 ">
         {projects.map(({ _id, image, tags, name, github }) => (
           <ProjectCard
             key={_id}

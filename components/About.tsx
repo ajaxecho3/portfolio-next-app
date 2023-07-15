@@ -21,14 +21,14 @@ const AboutPage = ({ about }: Props) => {
     twitter,
   } = about;
   return (
-    <section className="container mx-auto h-full min-h-screen pt-20 ">
+    <section className="h-full min-h-screen max-w-2xl pt-20 md:container md:mx-auto ">
       <div className="flex flex-col items-center  ">
-        <div className=" mx-auto w-3/4 rounded-xl  px-5 py-5">
-          <div className=" flex w-full justify-between space-x-5">
-            <div className=" relative w-1/3">
-              <div className=" relative h-96  w-full">
+        <div className=" mx-auto rounded-xl px-5  py-5 md:w-3/4">
+          <div className=" flex w-full flex-col justify-between md:flex-row md:space-x-5">
+            <div className=" relative md:w-1/3">
+              <div className=" relative h-96 w-full rounded-lg object-cover object-center">
                 <Image
-                  className="shadow-3xl rounded-lg"
+                  className="shadow-3xl rounded-lg object-cover object-center md:object-fill"
                   fill
                   sizes="1000"
                   src={image}
@@ -44,7 +44,7 @@ const AboutPage = ({ about }: Props) => {
                   Front-end Developer
                 </p>
                 <div className="mt-2 flex flex-col items-start justify-start space-y-2 ">
-                  <div className="grid grid-cols-7 gap-2">
+                  <div className="grid grid-cols-12 gap-2 lg:grid-cols-7">
                     {skills.map((skill) => (
                       <div
                         key={skill._id}
@@ -60,7 +60,7 @@ const AboutPage = ({ about }: Props) => {
                 </div>
               </div>
             </div>
-            <div className="w-3/4">
+            <div className="w-full md:w-3/4">
               <div className=" flex flex-col space-y-3">
                 <div className="rounded-lg bg-[#f0f0ec] p-2 text-sm shadow-lg">
                   <PortableText value={description} />
