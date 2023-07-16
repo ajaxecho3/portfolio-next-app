@@ -98,13 +98,6 @@ function Hero({}: Props) {
         }}
       />
       <div className="flex h-screen w-full items-center justify-center">
-        <div
-          className="absolute inset-0 h-screen blur-2xl"
-          style={{
-            background:
-              "linear-gradient(65.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
-          }}
-        ></div>
         <div className="relative">
           <h1 className="text-4xl font-bold text-gray-700 lg:text-5xl">
             Hi, I&#39;m{" "}
