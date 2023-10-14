@@ -26,23 +26,10 @@ const AboutPage = ({ about }: Props) => {
         <div className=" mx-auto rounded-xl px-5  py-5 md:w-3/4">
           <div className=" flex w-full flex-col justify-between md:flex-row md:space-x-5">
             <div className=" relative md:w-1/3">
-              <div className=" relative h-96 w-full rounded-lg object-cover object-center">
-                <Image
-                  className="shadow-3xl rounded-lg object-cover object-center md:object-fill"
-                  fill
-                  sizes="1000"
-                  src={image}
-                  alt={name + " photo"}
-                  priority
-                />
-              </div>
               <div className=" py-2 ">
                 <h1 className="gradiantText text-start text-3xl font-bold">
-                  {name}
+                  Technical Skills
                 </h1>
-                <p className=" gradiantText text-start text-xl font-semibold  ">
-                  Front-end Developer
-                </p>
                 <div className="mt-2 flex flex-col items-start justify-start space-y-2 ">
                   <div className="grid grid-cols-12 gap-2 lg:grid-cols-7">
                     {skills.map((skill) => (
@@ -62,14 +49,10 @@ const AboutPage = ({ about }: Props) => {
             </div>
             <div className="w-full md:w-3/4">
               <div className=" flex flex-col space-y-3">
-                <div className="rounded-lg bg-[#f0f0ec] p-2 text-sm shadow-lg">
-                  <PortableText value={description} />
-                </div>
-
-                <div className="max-w-screen-lg rounded-xl  bg-[#f0f0ec] p-2 px-4 shadow-lg md:px-2">
-                  <p className=" text-xl font-extrabold tracking-widest  text-gray-600 ">
+                <div className="max-w-screen-lg rounded-xl   p-2 px-4  md:px-2">
+                  <h1 className="gradiantText text-start text-3xl font-bold">
                     Experiences
-                  </p>
+                  </h1>
 
                   <ul className="mt-2 divide-y ">
                     {experience.map(
@@ -85,7 +68,7 @@ const AboutPage = ({ about }: Props) => {
                       }) => (
                         <li
                           key={_id}
-                          className=" px-1 py-2  duration-150 hover:rounded-xl hover:border-white hover:bg-gray-50 "
+                          className=" px-2 py-2   duration-150 hover:rounded-xl hover:border-white hover:bg-gray-50 "
                         >
                           <span className="space-y-3">
                             <div className="flex items-center gap-x-3">
