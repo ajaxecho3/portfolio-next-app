@@ -19,7 +19,7 @@ export default async function Home() {
   const featuredProjects = await getFeaturedProjects();
   const about = await getAbout();
   return (
-    <main className={` h-full ${montserrat.className} `}>
+    <main className={` h-full bg-black ${montserrat.className} `}>
       <Header socials={socials} />
       <Hero about={about} />
       <Projects featuredProject={featuredProjects} />
