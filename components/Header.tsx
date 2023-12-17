@@ -9,15 +9,15 @@ type Props = {
 
 const Header = ({ socials }: Props) => {
   return (
-    <header className=" body-font text-text sticky top-0 z-50">
-      <div className="container mx-auto flex flex-row flex-wrap items-center p-5">
+    <header className=" body-font text-text fixed w-full top-0 z-50 bg-transparent">
+      <div className="container mx-auto max-w-screen-2xl flex flex-row flex-wrap items-center p-5">
         <Link
           href="/"
           className="title-font mb-4 flex items-center  font-medium md:mb-0"
           replace
         >
-          <span className="ml-3 text-xl font-bold tracking-tighter ">
-            Bernard.
+          <span className="ml-3 text-2xl font-bold tracking-tighter ">
+            Bernard.<span className=" text-slate-700 text-lg"> * </span>
           </span>
         </Link>
         <nav className="ml-auto flex flex-wrap items-center justify-center text-base">

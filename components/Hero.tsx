@@ -3,36 +3,20 @@
 
 import { About } from "@/types/About";
 import { PortableText } from "@portabletext/react";
-import React, { useCallback } from "react";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import { Container, Engine } from "tsparticles-engine";
+import React from "react";
+import ParticlesComponent from "./ui/Particles";
+
 type Props = {
   about: About;
 };
 
 function Hero({ about }: Props) {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
-
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    //await loadFull(engine);
-    await loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      await console.log(container);
-    },
-    []
-  );
   return (
-    <section className="relative  overflow-hidden  pt-10 sm:pt-16 md:pt-0 2xl:pt-0">
+    <section className="relative  overflow-hidden  pt-10 sm:pt-16 md:pt-0 2xl:pt-0 bg-blue-950  h-[100vh]">
+      <ParticlesComponent />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-          <div>
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 my-auto">
+          {/* <div>
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
               Hey 👋 I am <br className="block sm:hidden" />
               {about.name}
@@ -43,7 +27,6 @@ function Hero({ about }: Props) {
           </div>
           <div className="relative">
             <div className="relative overflow-hidden">
-              {/* <div className=" absolute mx-auto h-full w-full bg-yellow-500 " /> */}
               <svg
                 className="scale-120 absolute inset-x-0 left-1/2 top-0 -mb-48 -translate-x-1/2"
                 id="visual"
@@ -66,7 +49,7 @@ function Hero({ about }: Props) {
                 alt=""
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

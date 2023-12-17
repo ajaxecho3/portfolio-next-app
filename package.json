@@ -16,6 +16,8 @@
     "@sanity/client": "^6.10.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.21.3",
+    "@tsparticles/engine": "^3.0.2",
+    "@tsparticles/react": "^3.0.0",
     "@types/node": "20.10.4",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
