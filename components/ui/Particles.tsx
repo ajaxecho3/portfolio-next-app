@@ -26,16 +26,7 @@ const ParticlesComponent = (props: Props) => {
   const options = useMemo(
     (): RecursivePartial<IOptions> | undefined => ({
       autoPlay: true,
-      //   background: {
-      //     color: {
-      //       value: "#0d47a1",
-      //     },
-      //     image: "",
-      //     position: "",
-      //     repeat: "",
-      //     size: "",
-      //     opacity: 1,
-      //   },
+
       backgroundMask: {
         composite: "destination-out",
         cover: {
@@ -437,7 +428,7 @@ const ParticlesComponent = (props: Props) => {
         },
         wobble: {
           distance: 5,
-          enable: false,
+          enable: true,
           speed: {
             angle: 50,
             move: 10,
@@ -457,7 +448,7 @@ const ParticlesComponent = (props: Props) => {
         rotate: {
           value: 0,
           animation: {
-            enable: false,
+            enable: true,
             speed: 0,
             decay: 0,
             sync: false,
@@ -482,14 +473,14 @@ const ParticlesComponent = (props: Props) => {
           width: 1,
         },
         links: {
-          blink: false,
+          blink: true,
           color: {
             value: "#ffffff",
           },
-          consent: false,
-          distance: 150,
+          consent: true,
+          distance: 200,
           enable: true,
-          frequency: 1,
+          frequency: 2,
           opacity: 0.4,
           shadow: {
             blur: 5,
@@ -507,11 +498,11 @@ const ParticlesComponent = (props: Props) => {
         },
         repulse: {
           value: 0,
-          enabled: false,
+          enabled: true,
           distance: 1,
           duration: 1,
           factor: 1,
-          speed: 1,
+          speed: 0.3,
         },
       },
       pauseOnBlur: true,
@@ -541,6 +532,7 @@ const ParticlesComponent = (props: Props) => {
             particlesLoaded(container as Container)
           }
           options={options}
+          className="absolute inset-0 w-full h-full"
         />
       )}
     </>
