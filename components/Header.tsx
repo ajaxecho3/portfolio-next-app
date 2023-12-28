@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { Social } from "../types/Social";
 import Icon from "./Icons";
 
@@ -17,7 +17,7 @@ const Header = ({ socials }: Props) => {
           replace
         >
           <span className="ml-3 text-2xl font-bold tracking-tighter ">
-            Bernard.<span className=" text-slate-700 text-lg"> * </span>
+            Bernard.<span className=" text-red-700 text-lg"> * </span>
           </span>
         </Link>
         <nav className="ml-auto flex flex-wrap items-center justify-center text-base">
