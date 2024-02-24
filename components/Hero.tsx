@@ -16,6 +16,9 @@ function Hero({ about }: Props) {
       <ParticlesComponent />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 my-auto">
+             {
+            about.name
+          }
           {/* <div>
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
               Hey 👋 I am <br className="block sm:hidden" />
