@@ -7,9 +7,11 @@ import React, { useEffect } from 'react'
 type Props = {
   words: string
   className?: string
+  textClassName?: string
 }
 
-const TextGenerateEffect = ({ words, className }: Props) => {
+const TextGenerateEffect = ({ words, textClassName, className }: Props) => {
+
   const [scope, animate] = useAnimate()
 
 
@@ -31,9 +33,8 @@ const TextGenerateEffect = ({ words, className }: Props) => {
       <motion.div ref={scope}>
         {
           wordsArray.map((word, idx) => {
-
             return (
-              <motion.span key={word + idx} className='dark:text-white text-black opacity-0'>
+              <motion.span key={word + idx} className={cn("dark:text-white text-black opacity-0", textClassName)}>
                 {word} {" "}
               </motion.span>
             )
