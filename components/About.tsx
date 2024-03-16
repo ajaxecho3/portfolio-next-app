@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { getAbout } from "@/sanity/sanity.utils";
 import React from "react";
 import Icon from "./Icons";
-import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 import { About } from "@/types/About";
