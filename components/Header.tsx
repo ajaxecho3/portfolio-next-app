@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Social } from "../types/Social";
 import Icon from "./Icons";
+import { ThemeSwitcher } from "./ui/ThemeSwitcher";
 
 type Props = {
   socials: Social[];
@@ -16,7 +17,7 @@ const Header = ({ socials }: Props) => {
           className="title-font mb-4 flex items-center  font-medium md:mb-0"
           replace
         >
-          <span className="ml-3 text-2xl font-bold tracking-tighter ">
+          <span className="ml-3 text-2xl dark:text-white font-bold tracking-tighter ">
             Bernard.<span className=" text-red-700 text-lg"> * </span>
           </span>
         </Link>
@@ -34,6 +35,7 @@ const Header = ({ socials }: Props) => {
             );
           })}
         </nav>
+        <ThemeSwitcher />
       </div>
     </header>
   );

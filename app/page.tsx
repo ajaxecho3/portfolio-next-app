@@ -7,7 +7,6 @@ import {
   getFeaturedProjects,
   getSocials,
 } from "@/sanity/sanity.utils";
-import About from "@/components/About";
 import AboutPage from "@/components/About";
 
 const montserrat = Montserrat({
