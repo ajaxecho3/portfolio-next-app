@@ -68,8 +68,9 @@ const Projects = ({ featuredProject }: Props) => {
   return (
     <section
       id="projects-section"
-      className=" h-screen relative space-y-2 py-2"
+      className=" h-screen relative space-y-2 py-2 dark:bg-dot-white/[0.2] bg-grid-dot/[0.2]"
     >
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-gray-900 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="relative flex w-full flex-col max-w-4xl mx-auto space-y-2 ">
         <div className="w-full  ">
           <p className="text-1xl bg-gradient-to-r from-orange-500 via-purple-500 to-blue-700 bg-clip-text font-bold text-transparent lg:text-2xl">
