@@ -5,6 +5,7 @@ import { Project } from "../types/Project";
 import Icon from "./Icons";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 type Props = {
   featuredProject: Project[];
 };
@@ -67,23 +68,23 @@ const Projects = ({ featuredProject }: Props) => {
   return (
     <section
       id="projects-section"
-      className=" relative h-full w-full items-center px-4 lg:mx-auto lg:h-screen lg:w-3/4"
+      className=" h-screen relative space-y-2 py-2"
     >
-      <div className="relative flex w-full flex-col lg:absolute lg:left-[50%] lg:top-[50%] lg:-translate-x-[50%] lg:-translate-y-[50%] lg:flex-row-reverse ">
-        <div className="w-full lg:w-1/2 ">
+      <div className="relative flex w-full flex-col max-w-4xl mx-auto space-y-2 ">
+        <div className="w-full  ">
           <p className="text-1xl bg-gradient-to-r from-orange-500 via-purple-500 to-blue-700 bg-clip-text font-bold text-transparent lg:text-2xl">
             {" "}
             &lt;Component&gt;
           </p>
           <h1 className="text-3xl font-bold uppercase text-gray-400 lg:text-9xl">
-            PRO<span className="gradiantText">.JSX</span>
+            PROJECT<span className="gradiantText">.JSX</span>
           </h1>
           <p className="text-1xl text-right font-bold text-gray-400 lg:text-2xl">
             {" "}
             &lt;/Component&gt;
           </p>
         </div>
-        <div className="w-full px-4  lg:w-1/2">
+        <div className="w-full px-4  ">
           <p className=" text-sm tracking-tight">
             Welcome to my project page! Here, you&#39;ll find a collection of
             some of the exciting projects I&#39;ve worked on as a React
@@ -98,36 +99,46 @@ const Projects = ({ featuredProject }: Props) => {
           </p>
         </div>
       </div>
-      <div className="relative flex w-full flex-col justify-center lg:absolute lg:top-5 lg:flex-row lg:justify-start lg:space-x-4 lg:py-2  ">
-        {featuredProject
-          .filter((_, index) => index % 2)
-          .map((project) => (
-            <ProjectCard
-              key={project._id}
-              name={project.name}
-              image={project.image}
-              tags={project.tags}
-              link={project.link}
-              github={project.github}
-            />
-          ))}
-      </div>
-
-      <div className="relative flex w-full flex-col justify-center lg:absolute lg:bottom-8 lg:flex-row lg:justify-end lg:space-x-4 lg:py-2  ">
-        {featuredProject
-          .filter((_, index) => !(index % 2))
-          .map((project) => (
-            <ProjectCard
-              key={project._id}
-              name={project.name}
-              image={project.image}
-              tags={project.tags}
-              link={project.link}
-              github={project.github}
-            />
-          ))}
-      </div>
-      <div className="flex w-full items-center justify-center lg:absolute lg:bottom-0 ">
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+        {featuredProject.map((project, i) => (
+          <BentoGridItem
+            key={i}
+            title={project.name}
+            description={project.description}
+            header={
+              <div className=" aspect-square relative">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  className=" object-cover"
+                  fill
+                />
+              </div>
+            }
+            icon={
+              <div className="flex w-full justify-between space-x-2">
+                <div className=" flex w-1/2 justify-start -space-x-2 overflow-hidden  font-semibold uppercase">
+                  {project.tags.map((tag) => (
+                    <div
+                      key={tag._id}
+                      className="rounded-full border-[1px] border-gray-200 bg-white p-1"
+                    >
+                      <Icon
+                        icon={tag.logo}
+                        width={20}
+                        height={20}
+                        name={tag.name}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            }
+            className={i === 3 || i === 6 ? "md:col-span-2" : "md:col-span-1"}
+          />
+        ))}
+      </BentoGrid>
+      <div className="flex w-full items-center justify-center ">
         <Button
           variant={"outline"}
           className="h-15 rounded-full border border-gray-900 px-4 font-bold tracking-tighter"
