@@ -4,7 +4,7 @@ import TextGenerateEffect from "./ui/TextGenerateEffect";
 import dynamic from "next/dynamic";
 
 const BoxesComponent = dynamic(() => import("./ui/BackgroundBoxes"), {
-  ssr: true,
+  ssr: false,
 });
 
 type Props = {
