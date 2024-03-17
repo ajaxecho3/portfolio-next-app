@@ -21,32 +21,30 @@ const AboutPage = ({ about }: Props) => {
     twitter,
   } = about;
   return (
-    <section className="relative h-screen max-w-2xl pt-20 md:container md:mx-auto flex flex-col items-center ">
-      <div className=" mx-auto rounded-xl px-5  py-5 md:w-3/4">
-        <div className=" flex w-full flex-col justify-between md:flex-row md:space-x-5">
-          <div className=" relative md:w-1/3">
-            <div className=" py-2 ">
-              <h1 className="gradiantText text-start text-3xl font-bold">
+    <section className="relative h-screen max-w-4xl pt-20 md:container md:mx-auto flex flex-col items-center ">
+      <div className=" mx-auto rounded-xl px-5  py-5  max-w-6xl">
+        <div className=" flex w-full flex-col justify-center ">
+          <div className=" relative w-full">
+            <div className=" py-4 px-2 ">
+              <h1 className="gradiantText text-start text-3xl font-bold mb-4">
                 Technical Skills
               </h1>
-              <div className="mt-2 flex flex-col items-start justify-start space-y-2 ">
-                <div className="grid grid-cols-12 gap-2 lg:grid-cols-7">
-                  {skills.map((skill) => (
-                    <div
-                      key={skill._id}
-                      className="flex w-full items-center space-x-3 "
-                    >
-                      <Icon
-                        className=" h-8 w-8 rounded-xl bg-white p-1 shadow-xl hover:scale-150"
-                        icon={skill.logo}
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-8 gap-2">
+                {skills.map((skill) => (
+                  <div
+                    key={skill._id}
+                    className="flex w-full items-center space-x-3 "
+                  >
+                    <Icon
+                      className=" h-8 w-8 rounded-xl bg-white p-1 shadow-xl hover:scale-150"
+                      icon={skill.logo}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-          <div className="w-full md:w-3/4">
+          <div className="relative w-full ">
             <div className=" flex flex-col space-y-3">
               <div className="max-w-screen-lg rounded-xl   p-2 px-4  md:px-2">
                 <h1 className="gradiantText text-start text-3xl font-bold">
