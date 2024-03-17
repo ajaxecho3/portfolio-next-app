@@ -16,7 +16,7 @@ const Project = async ({ params }: Props) => {
       <div className="flex flex-col space-y-4">
         <Link href={"/projects"} replace>
           <Icon
-            className=" rounded-full bg-white p-2 shadow-lg"
+            className=" rounded-full dark:bg-black p-2 shadow-lg"
             icon={"ep:back"}
             width={40}
             height={40}

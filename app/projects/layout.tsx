@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 const layout = ({ children }: Props) => {
   return (
     <main
-      className={` ${montserrat.className} h-full  min-h-screen bg-[#E4E4DE]  py-2`}
+      className={` ${montserrat.className} h-full  min-h-screen dark:text-white  dark:bg-gray-900  py-16`}
     >
       {children}
     </main>

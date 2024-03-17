@@ -12,7 +12,7 @@ const Projects = async (props: Props) => {
     <div className="mx-auto w-full px-3 md:w-1/2">
       <Link href={"/"} replace>
         <Icon
-          className=" rounded-full bg-white p-2 shadow-lg"
+          className=" rounded-full dark:bg-black p-2 shadow-lg"
           icon={"ep:back"}
           width={40}
           height={40}
