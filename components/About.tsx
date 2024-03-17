@@ -67,7 +67,7 @@ const AboutPage = ({ about }: Props) => {
                     }) => (
                       <BackgroundGradientCard
                         key={_id}
-                        className="rounded-[22px] w-full p-2 sm:p-4 relative overflow-hidden bg-white flex gap-8 dark:bg-zinc-900"
+                        className=" rounded-3xl w-full p-2 sm:p-4 relative overflow-hidden bg-white flex gap-8 dark:bg-zinc-900"
                       >
                         <div className=" aspect-square relative h-24 w-24 ">
                           <Image
@@ -79,9 +79,9 @@ const AboutPage = ({ about }: Props) => {
                         </div>
                         <div className=" flex flex-col  ">
                           <h3>{name}</h3>
-                          <h2>{position}</h2>
+                          <h2 className="text-md">{position}</h2>
 
-                          <p>{description}</p>
+                          <p className=" text-sm">{description}</p>
                         </div>
                         <span className=" text-sm absolute right-4 top-2">
                           {start} - {current ? "Current" : end}
