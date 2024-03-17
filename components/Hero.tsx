@@ -1,7 +1,12 @@
 import { About } from "@/types/About";
-import React from "react";
+import React, { Suspense } from "react";
 import TextGenerateEffect from "./ui/TextGenerateEffect";
-import { Boxes } from "@/components/ui/BackgroundBoxes";
+import dynamic from "next/dynamic";
+
+const BoxesComponent = dynamic(() => import("./ui/BackgroundBoxes"), {
+  ssr: true,
+});
+
 type Props = {
   about: About;
 };
@@ -10,7 +15,9 @@ function Hero({ about }: Props) {
   const introduction = `Hi!👋`;
   return (
     <section className="relative  overflow-hidden  pt-10 sm:pt-16 md:pt-0 2xl:pt-0  h-screen">
-      <Boxes />
+      <Suspense fallback={"Loading...."}>
+        <BoxesComponent />
+      </Suspense>
       <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl md:text-4xl lg:text-7xl">
         <div className=" justify-start">
           <TextGenerateEffect
