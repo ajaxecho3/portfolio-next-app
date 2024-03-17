@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import { Project } from "../types/Project";
 import Icon from "./Icons";
-import { Button } from "./ui/button";
+import { Button, CTAButton } from "./ui/button";
 import Image from "next/image";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 type Props = {
@@ -68,7 +68,7 @@ const Projects = ({ featuredProject }: Props) => {
   return (
     <section
       id="projects-section"
-      className=" h-screen relative space-y-2 py-2 dark:bg-dot-white/[0.2] bg-grid-dot/[0.2]"
+      className=" h-screen relative space-y-2 py-2 dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
     >
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-gray-900 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="relative flex w-full flex-col max-w-4xl mx-auto space-y-2 ">
@@ -140,13 +140,9 @@ const Projects = ({ featuredProject }: Props) => {
         ))}
       </BentoGrid>
       <div className="flex w-full items-center justify-center ">
-        <Button
-          variant={"outline"}
-          className="h-15 rounded-full border border-gray-900 px-4 font-bold tracking-tighter"
-          asChild
-        >
+        <CTAButton className="bg-white !h-full p-2 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800">
           <Link href={"/projects"}>More Projects</Link>
-        </Button>
+        </CTAButton>
       </div>
     </section>
   );
