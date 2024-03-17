@@ -21,7 +21,7 @@ const AboutPage = ({ about }: Props) => {
     twitter,
   } = about;
   return (
-    <section className="relative h-full min-h-screen max-w-2xl pt-20 md:container md:mx-auto flex flex-col items-center ">
+    <section className="relative h-screen max-w-2xl pt-20 md:container md:mx-auto flex flex-col items-center ">
       <div className=" mx-auto rounded-xl px-5  py-5 md:w-3/4">
         <div className=" flex w-full flex-col justify-between md:flex-row md:space-x-5">
           <div className=" relative md:w-1/3">

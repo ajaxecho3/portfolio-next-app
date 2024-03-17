@@ -68,7 +68,7 @@ const Projects = ({ featuredProject }: Props) => {
   return (
     <section
       id="projects-section"
-      className=" h-screen relative space-y-2 py-2 dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
+      className=" relative space-y-2 py-2 dark:bg-dot-white/[0.2] bg-dot-black/[0.2] "
     >
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-gray-900 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
       <div className="relative flex w-full flex-col max-w-4xl mx-auto space-y-2 ">
@@ -100,7 +100,7 @@ const Projects = ({ featuredProject }: Props) => {
           </p>
         </div>
       </div>
-      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] px-2">
         {featuredProject.map((project, i) => (
           <BentoGridItem
             key={i}
