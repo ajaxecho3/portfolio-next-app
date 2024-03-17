@@ -67,25 +67,28 @@ const AboutPage = ({ about }: Props) => {
                     }) => (
                       <BackgroundGradientCard
                         key={_id}
-                        className=" rounded-3xl w-full p-2 sm:p-4 relative overflow-hidden bg-white flex gap-8 dark:bg-zinc-900"
+                        className=" rounded-3xl w-full p-2 sm:p-4 relative overflow-hidden bg-white flex flex-col md:flex-row md:gap-8 dark:bg-zinc-900"
                       >
-                        <div className=" aspect-square relative h-24 w-24 ">
+                        <div className=" aspect-square relative h-24 w-24  ">
                           <Image
                             fill
                             src={image}
                             alt={name}
-                            className="rounded-3xl"
+                            className="rounded-lg"
                           />
                         </div>
                         <div className=" flex flex-col  ">
-                          <h3>{name}</h3>
+                          <h3 className=" text-lg font-bold">
+                            {name}{" "}
+                            <span className=" text-sm font-medium ">
+                              {start} - {current ? "Current" : end}
+                            </span>
+                          </h3>
                           <h2 className="text-md">{position}</h2>
 
                           <p className=" text-sm">{description}</p>
                         </div>
-                        <span className=" text-sm absolute right-4 top-2">
-                          {start} - {current ? "Current" : end}
-                        </span>
+
                         <Meteors number={20} />
                       </BackgroundGradientCard>
                     ),

@@ -1,5 +1,3 @@
-"use client";
-
 import { About } from "@/types/About";
 import React from "react";
 import TextGenerateEffect from "./ui/TextGenerateEffect";
@@ -9,8 +7,6 @@ type Props = {
 };
 
 function Hero({ about }: Props) {
-  console.log(about.skills);
-
   const introduction = `Hi!👋`;
   return (
     <section className="relative  overflow-hidden  pt-10 sm:pt-16 md:pt-0 2xl:pt-0  h-screen">
