@@ -20,6 +20,7 @@ const Header = ({ socials }: Props) => {
           <span className="ml-3 text-2xl dark:text-white font-bold tracking-tighter ">
             Bernard.<span className=" text-red-700 text-lg"> * </span>
           </span>
+
         </Link>
         <nav className="ml-auto flex flex-wrap items-center justify-center text-base">
           {socials.map((social) => {
@@ -34,8 +35,8 @@ const Header = ({ socials }: Props) => {
               </Link>
             );
           })}
+          <ThemeSwitcher />
         </nav>
-        <ThemeSwitcher />
       </div>
     </header>
   );

@@ -2,8 +2,15 @@
 import { MoonStar, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { cn } from "@/lib/utils"
 
-export const ThemeSwitcher = () => {
+
+export type ThemeSwitcherProps = {
+  className?: string
+}
+
+
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -20,7 +27,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      className={`w-fit absolute right-5 top-2 p-1 rounded-full hover:scale-110 active:scale-100 duration-200 bg-slate-200 dark:bg-[#212933]`}
+      className={cn("w-fit  p-1 rounded-full hover:scale-110 active:scale-100 duration-200 bg-slate-200 dark:bg-[#212933]", className)}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {
