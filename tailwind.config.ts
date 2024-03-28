@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import shadCnPreset from "./lib/shadcn-preset";
 import addVariablesForColors from "./tailwindPlugins/addVariablesForColors";
 const defaultTheme = require("tailwindcss/defaultTheme");
-
+const tailwindcssPatterns = require("tailwindcss-patterns");
 const svgToDataUri = require("mini-svg-data-uri");
 
 const colors = require("tailwindcss/colors");
@@ -35,8 +35,9 @@ const config = {
     },
   },
   plugins: [
+    tailwindcssPatterns,
     addVariablesForColors,
-    function ({ matchUtilities, theme }: any) {
+    function({ matchUtilities, theme }: any) {
       matchUtilities(
         {
           "bg-grid": (value: any) => ({

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+'use client';
 import React from "react";
 import Icon from "./Icons";
 import Image from "next/image";
@@ -6,6 +7,8 @@ import Link from "next/link";
 import { About } from "@/types/About";
 import { Meteors } from "./ui/Meteors";
 import { BackgroundGradientCard } from "./ui/BackgroundGradientCard";
+import { AnimatePresence } from "framer-motion";
+import { CanvasRevealEffect } from "./ui/canvas-reveal-effects";
 
 type Props = { about: About };
 
@@ -27,16 +30,23 @@ const AboutPage = ({ about }: Props) => {
           <div className=" relative w-full">
             <div className=" py-4 px-2 ">
               <h1 className="gradiantText text-start text-3xl font-bold mb-4">
-                Technical Skills
+                Technology Stack
               </h1>
               <div className="grid grid-cols-8 gap-2">
                 {skills.map((skill) => (
                   <div
                     key={skill._id}
-                    className="flex w-full items-center space-x-3 "
+                    className="flex relative w-full items-center space-x-3 "
                   >
+                    <AnimatePresence>
+                      <div className="h-full w-full absolute inset-0">
+                        <CanvasRevealEffect animationSpeed={3}
+                          containerClassName="bg-black"
+                          dotSize={2} />
+                      </div>
+                    </AnimatePresence>
                     <Icon
-                      className=" h-8 w-8 rounded-xl bg-white p-1 shadow-xl hover:scale-150"
+                      className="h-24 relative z-20 m-7  w-24 rounded-xl bg-transparent p-1  hover:scale-105"
                       icon={skill.logo}
                     />
                   </div>
@@ -44,7 +54,7 @@ const AboutPage = ({ about }: Props) => {
               </div>
             </div>
           </div>
-          <div className="relative w-full ">
+          <div className="relative w-full mt-10 ">
             <div className=" flex flex-col space-y-3">
               <div className="max-w-screen-lg rounded-xl   p-2 px-4  md:px-2">
                 <h1 className="gradiantText text-start text-3xl font-bold">
