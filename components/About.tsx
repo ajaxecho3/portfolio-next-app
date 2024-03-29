@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-import React from "react";
+"use client";
+import React, { Suspense } from "react";
 import Icon from "./Icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,29 +29,33 @@ const AboutPage = ({ about }: Props) => {
         <div className=" flex w-full flex-col justify-center ">
           <div className=" relative w-full">
             <div className=" py-4 px-2 ">
-              <h1 className="gradiantText text-start text-3xl font-bold mb-4">
-                Technology Stack
-              </h1>
-              <div className="grid grid-cols-8 gap-2">
-                {skills.map((skill) => (
-                  <div
-                    key={skill._id}
-                    className="flex relative w-full items-center space-x-3 "
-                  >
-                    <AnimatePresence>
-                      <div className="h-full w-full absolute inset-0">
-                        <CanvasRevealEffect animationSpeed={3}
-                          containerClassName="bg-black"
-                          dotSize={2} />
-                      </div>
-                    </AnimatePresence>
-                    <Icon
-                      className="h-24 relative z-20 m-7  w-24 rounded-xl bg-transparent p-1  hover:scale-105"
-                      icon={skill.logo}
-                    />
-                  </div>
-                ))}
-              </div>
+              <Suspense fallback={"loading..."}>
+                <h1 className="gradiantText text-start text-3xl font-bold mb-4">
+                  Technology Stack
+                </h1>
+                <div className="grid grid-cols-8 gap-2">
+                  {skills.map((skill) => (
+                    <div
+                      className="flex relative w-full items-center space-x-3"
+                      key={skill._id}
+                    >
+                      <AnimatePresence>
+                        <div className="h-full w-full absolute inset-0">
+                          <CanvasRevealEffect
+                            animationSpeed={3}
+                            containerClassName="bg-transparent"
+                            dotSize={2}
+                          />
+                        </div>
+                      </AnimatePresence>
+                      <Icon
+                        className="h-24 relative z-20 m-7  w-24 rounded-xl bg-transparent p-1  hover:scale-105"
+                        icon={skill.logo}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Suspense>
             </div>
           </div>
           <div className="relative w-full mt-10 ">
@@ -63,18 +67,21 @@ const AboutPage = ({ about }: Props) => {
 
                 <div className="mt-2  space-y-4  ">
                   {experience.map(
-                    ({
-                      name,
-                      _id,
-                      position,
-                      start,
-                      current,
-                      end,
-                      description,
-                      image,
-                    }) => (
+                    (
+                      {
+                        name,
+                        _id,
+                        position,
+                        start,
+                        current,
+                        end,
+                        description,
+                        image,
+                      },
+                      idx,
+                    ) => (
                       <BackgroundGradientCard
-                        key={_id}
+                        key={_id + idx}
                         className=" rounded-3xl w-full p-2 sm:p-4 relative overflow-hidden bg-white flex flex-col md:flex-row md:gap-8 dark:bg-zinc-900"
                       >
                         <div className=" aspect-square relative h-24 w-24  ">
