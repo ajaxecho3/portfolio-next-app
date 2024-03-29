@@ -33,17 +33,17 @@ const AboutPage = ({ about }: Props) => {
                 <h1 className="gradiantText text-start text-3xl font-bold mb-4">
                   Technology Stack
                 </h1>
-                <div className="grid grid-cols-8 gap-2">
+                <div className="grid md:grid-cols-4 lg:grid-cols-6  gap-2">
                   {skills.map((skill) => (
                     <div
-                      className="flex relative w-full items-center space-x-3"
+                      className="flex relative w-full justify-center items-center space-x-3"
                       key={skill._id}
                     >
                       <AnimatePresence>
                         <div className="h-full w-full absolute inset-0">
                           <CanvasRevealEffect
                             animationSpeed={3}
-                            containerClassName="bg-transparent"
+                            containerClassName="bg-black dark:bg-transparent rounded-full"
                             dotSize={2}
                           />
                         </div>
