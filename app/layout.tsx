@@ -1,34 +1,43 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ThemeProvider } from "@/hooks/ThemeProvider";
-import Header from "@/components/Header";
-import { getSocials } from "@/sanity/sanity.utils";
-const inter = Inter({ subsets: ["latin"] });
+import Navigation from "@/components/Navigation";
+import { ThemeProvider } from "@/components/theme-provider";
 
-export const metadata = {
-  title: "Bernardino Ochoa",
-  description: "Bernardino Ochoa Portfolio",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Bernardino Ochoa Portfolio",
+  description: "Portfolio website of Bernardino Ochoa",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  const socials = await getSocials();
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} text-black dark:text-white  dark:bg-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header socials={socials} />
-          {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navigation />
+          <main className="max-w-5xl mx-auto">{children}</main>
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
