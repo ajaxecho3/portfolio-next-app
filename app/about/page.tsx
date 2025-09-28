@@ -37,14 +37,12 @@ async function Page() {
       title: `${experience.startDate} - ${experience.endDate || "Present"}`,
       content: (
         <div className=" mb-20 " key={experience._id}>
-          <h3 className="text-lg font-semibold text-zinc-50">
+          <h3 className="text-lg font-semibold dark:text-zinc-50">
             {experience.role}
           </h3>
-          <p className="text-zinc-400 text-sm">
-            {experience.startDate} - {experience.endDate}
-          </p>
+          <p className="dark:text-zinc-400 text-sm">{experience.companyName}</p>
           {experience.responsibilities && (
-            <ul className="text-zinc-300 text-sm space-y-1">
+            <ul className="dark:text-zinc-300 text-sm space-y-1">
               {experience.responsibilities.map(
                 (responsibility: string, index: number) => (
                   <li key={index} className="list-disc list-inside">
@@ -61,7 +59,7 @@ async function Page() {
     <div>
       <div className="max-w-5xl mx-auto px-8 md:mt-20 relative flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-10 justify-between">
         <div>
-          <h1 className="font-bold text-3xl md:text-5xl md:leading-tight text-zinc-50 max-w-3xl">
+          <h1 className="font-bold text-3xl md:text-5xl md:leading-tight dark:text-zinc-50 max-w-3xl">
             Hey! I&apos;m
             <span className="text-cyan-500"> Bernardino Ochoa</span> and
             I&apos;m a frontend-focused developer with backend expertise.
@@ -86,7 +84,13 @@ async function Page() {
           )}
         </div>
       </div>
-      <div className="relative w-full overflow-clip">
+      <div className="relative w-full overflow-clip px-8">
+        <h1 className="text-2xl md:text-3xl dark:text-white font-bold max-w-5xl mx-auto mt-20 md:mt-40">
+          Work Experience
+        </h1>
+        <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide ">
+          It&apos;s mostly about the culture.
+        </p>
         <Timeline data={data} />
       </div>
     </div>

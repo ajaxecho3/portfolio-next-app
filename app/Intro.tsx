@@ -14,11 +14,11 @@ const Intro = async () => {
 
   return (
     <div className="px-8 mt-10 md:mt-20">
-      <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
+      <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-600 dark:text-zinc-50 max-w-3xl">
         {introData?.heading}{" "}
         <span className="text-cyan-500">{introData?.highlightedText}</span>
       </h1>
-      <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 leading-loose tracking-wide">
+      <p className=" text-zinc-600  dark:text-zinc-400 text-sm md:text-base max-w-2xl mt-8 leading-loose tracking-wide">
         {introData?.paragraph}
       </p>
     </div>

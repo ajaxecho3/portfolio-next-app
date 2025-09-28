@@ -40,6 +40,9 @@ const gitHubProjects = async () => {
         };
       })
     );
+    //first 10 repos
+    reposWithLanguages.sort((a, b) => b.stars - a.stars);
+    reposWithLanguages.splice(10);
     return reposWithLanguages;
   } catch (error) {
     console.error("Error fetching GitHub projects:", error);
@@ -51,10 +54,10 @@ const Projects = async () => {
   const gitHubProjectsData = await gitHubProjects();
   return (
     <div className=" max-w-5xl mx-auto px-8">
-      <h1 className="text-2xl md:text-3xl text-white font-bold max-w-5xl mx-auto mt-20 md:mt-40">
+      <h1 className="text-2xl md:text-3xl dark:text-white font-bold max-w-5xl mx-auto mt-20 md:mt-40">
         I&apos;ve been building a lot of things
       </h1>
-      <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide ">
+      <p className="text-zinc-600  dark:text-zinc-400 text-sm md:text-base max-w-2xl mt-4 leading-loose tracking-wide ">
         Here are some of my public GitHub repositories. I&apos;m passionate
         about
       </p>
